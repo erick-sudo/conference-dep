@@ -1,0 +1,123 @@
+.swiper-pagination .swiper-pagination-bullet {
+  @apply bg-white; /* Inactive dot color */
+  @apply opacity-100;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  @apply bg-red-600; /* Active dot color */
+}
+
+html::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+.routing::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+.scroll_x::-webkit-scrollbar {
+  height: 5px;
+  width: 0;
+  background-color: rgba(128, 128, 128, 0.529);
+  border-radius: 10px;
+}
+.scroll_x::-webkit-scrollbar-thumb {
+  background-color: rgb(11, 120, 36);
+  border-radius: 10px;
+}
+
+.scroll_y::-webkit-scrollbar {
+  height: 0;
+  width: 5px;
+  background-color: rgba(128, 128, 128, 0.529);
+  border-radius: 10px;
+}
+.scroll_y::-webkit-scrollbar-thumb {
+  background-color: rgb(11, 120, 36);
+  border-radius: 10px;
+}
+
+.scroll_stack {
+  transition: 1s;
+}
+
+@keyframes drop_text {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+  }
+}
+.tab-content {
+  animation: fade_in 1s ease-in-out;
+}
+
+/* When a Tab is active, fade in its content */
+.tab-content.active {
+  animation: fade_in 1s ease-in-out;
+}
+
+@keyframes fade_in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.slide_p {
+  animation: 1s slide_r ease-in-out;
+}
+.expand_w {
+  animation: 0.5s expand_width ease;
+}
+.contract_w {
+  animation: 0.5s contract_width ease;
+}
+
+@keyframes contract_width {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 20%;
+  }
+}
+
+@keyframes expand_width {
+  from {
+    width: 20%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slide_r {
+  from {
+    left: 0;
+  }
+  to {
+    left: 90%;
+  }
+}
+
+.space_3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.flip_r {
+  transform-origin: left;
+  backface-visibility: hidden;
+}
+
+@keyframes flipping {
+  from {
+    transform: rotate3d(0, -1, 0, -85deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

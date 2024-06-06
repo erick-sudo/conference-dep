@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  conference-api:
+    build: conference-api
+    ports:
+      - "4000:4000"
+    environment:
+      - RAILS_ENV=development
+      - DATABASE_URL=postgres://conference:conference@postgres-db:5432/conference
+    depends_on:
+      - postgres-db
+    networks:
+      - conference_network
+  
+  conference-frontend:
+    build: conference-front
+    ports:
+      - "80:80"
+    depends_on:
+      - conference-api
+    networks:
+      - conference_network
+
+  postgres-db:
+    build: database/postgresql
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_DB=conference
+      - POSTGRES_USER=conference
+      - POSTGRES_PASSWORD=conference
+    networks:
+      - conference_network
+
+networks:
+  conference_network: {}
