@@ -42,7 +42,7 @@ function AuthProvider({ children }) {
 
   const [user, setUser] = useState(null);
 
-  const backendUrl = "http://ec2-18-234-217-121.compute-1.amazonaws.com:4000";
+  const backendUrl = "http://ec2-18-208-140-121.compute-1.amazonaws.com:4000";
   // const backendUrl = "https://conference-thawing-c5eafdce0b81.herokuapp.com";
 
   const isValidEmail = (email) => {
